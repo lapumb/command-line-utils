@@ -2,16 +2,21 @@
 
 set -e
 
-USAGE="Permanently delete a submodule from a git repository.
+USAGE="""
+Description:
+    Permanently delete a submodule from a git repository.
+
+Usage:
+    $0
+    $0 -s <submodule_relative_path>
 
 Args:
-    -s      Submodule path (required)
-    -h      Print this help message
+    -s    Submodule path (required)
+    [-h]  Show this message
 
 Examples:
     $0 -s code/components/third-party/amazon-kinesis
-    $0 -h
-"
+"""
 
 # Get the submodule path
 while getopts ':s:h' c

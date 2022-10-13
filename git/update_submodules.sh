@@ -1,10 +1,17 @@
 # !/bin/bash
 
-USAGE="""Recursively update the submodules of a Git repository
+USAGE="""
+Description:
+    Recursively update the submodules of a git repository.
 
-    Usage:
-        $0
-        $0 -h
+Usage:
+    $0
+
+Args:
+    [-h]  Show this message
+
+Examples:
+    $0
 """
 
 # Display the usage if any arguments are provided
