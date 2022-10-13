@@ -24,7 +24,7 @@ do
   case $c in
     s) SUBMODULE_PATH="$OPTARG" ;;
     h) echo "$USAGE" && exit 0 ;;
-    *) echo "$USAGE" && exit 1
+    *) echo "$USAGE" && exit 1 ;;
   esac
 done
 

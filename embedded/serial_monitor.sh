@@ -7,13 +7,13 @@ PORT=$ESPPORT
 
 USAGE="""
 Description:
-    Monitor the serial output from a device.
+    Monitor the serial output from a device connected to your computer.
 
 Usage:
     $0 -p <port> [-b <baudrate>]
 
 Args:
-    -p <port>       The serial port to use (defaults to \$ESPPORT)
+    -p <port>       The serial port to use
     [-b <baudrate]  Set the serial baurdrate (defaults to $BAUDRATE)
     [-h]            Show this message
 
