@@ -1,6 +1,4 @@
-# !/bin/bash
-
-set -e
+#!/bin/bash -e
 
 BAUDRATE=115200
 PORT=$ESPPORT
