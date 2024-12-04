@@ -27,7 +27,7 @@ function echo_message() {
 ################################################################################
 
 USAGE="""Description:
-Parse the logs from a given systemd journal log file from fluent-bit.
+    Parse the logs from a given systemd journal log file from fluent-bit.
 
 Usage:
     $0 -f <log_file> [-u <unit_name>] [-n <num_lines_to_include>]
@@ -36,7 +36,7 @@ Options:
     -f    Required argument that specifies the log file to parse.
     [-u]  Optional argument that specifies the unit name to filter logs.
     [-n]  Optional argument that specifies the number of lines to include from the log file.
-    [-h]  Show this message
+    [-h]  Show this message.
 
 Examples:
     $0 -f systemd.log
@@ -50,7 +50,7 @@ UNIT_NAME=
 NUM_LINES=
 
 # Parse the arguments
-while getopts ":f:u:n:" opt; do
+while getopts ":f:u:n:h" opt; do
     case $opt in
     f)
         LOG_FILE=$OPTARG
@@ -60,6 +60,10 @@ while getopts ":f:u:n:" opt; do
         ;;
     n)
         NUM_LINES=$OPTARG
+        ;;
+    h)
+        echo "$USAGE"
+        exit 0
         ;;
     \?)
         echo "Invalid option: $OPTARG" 1>&2
@@ -75,6 +79,8 @@ done
 # Check if the file exists.
 if [ ! -f "$LOG_FILE" ]; then
     echo "Error: File '$LOG_FILE' not found!"
+    echo ""
+    echo "$USAGE"
     exit 1
 fi
 
